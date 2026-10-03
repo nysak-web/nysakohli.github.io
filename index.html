@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,11 +21,10 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #f6f7f9;
+            background-color: #f7f8fa;
             color: #222;
             line-height: 1.6;
         }
-
 
         /* NAVIGATION */
 
@@ -34,23 +32,17 @@
             background-color: white;
             padding: 20px 9%;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #e3e3e3;
-        }
-
-        .logo {
-            color: #cc0033;
-            font-size: 22px;
-            font-weight: bold;
+            border-bottom: 1px solid #e5e5e5;
         }
 
         nav ul {
             display: flex;
-            gap: 30px;
+            gap: 32px;
             list-style: none;
         }
 
@@ -58,6 +50,7 @@
             text-decoration: none;
             color: #333;
             font-weight: 600;
+            font-size: 15px;
             transition: 0.2s;
         }
 
@@ -65,78 +58,50 @@
             color: #cc0033;
         }
 
-
         /* PERSONAL STATEMENT */
 
         .hero {
-            min-height: 82vh;
+            min-height: 72vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 70px 20px;
-
-            background: linear-gradient(
-                135deg,
-                #ffffff,
-                #f0f1f3
-            );
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #ffffff, #f3f4f6);
         }
 
         .hero-content {
             max-width: 900px;
         }
 
-        .intro {
-            color: #cc0033;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-        }
-
         .hero h1 {
-            font-size: 62px;
+            font-size: 64px;
             line-height: 1.1;
             margin-bottom: 15px;
+            color: #1f1f1f;
         }
 
         .hero h2 {
-            color: #555;
-            font-size: 22px;
-            font-weight: 500;
-            margin-bottom: 28px;
-        }
-
-        .statement-box {
-            max-width: 790px;
-            margin: auto;
-            background-color: white;
-            padding: 25px 30px;
-            border-radius: 10px;
-            border-left: 4px solid #cc0033;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.06);
-        }
-
-        .statement-label {
             color: #cc0033;
-            font-size: 12px;
-            font-weight: bold;
-            letter-spacing: 1.5px;
-            margin-bottom: 8px;
+            font-size: 21px;
+            font-weight: 600;
+            margin-bottom: 26px;
         }
 
         .statement {
-            color: #444;
+            max-width: 780px;
+            margin: 0 auto;
+            color: #555;
             font-size: 18px;
+            line-height: 1.7;
         }
 
         .hero-button {
             display: inline-block;
-            margin-top: 30px;
+            margin-top: 32px;
             background-color: #cc0033;
             color: white;
-            padding: 13px 25px;
+            padding: 13px 26px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
@@ -148,8 +113,7 @@
             transform: translateY(-2px);
         }
 
-
-        /* GENERAL */
+        /* GENERAL SECTIONS */
 
         section {
             padding: 85px 9%;
@@ -162,13 +126,12 @@
 
         .section-heading h2 {
             font-size: 36px;
-            margin-bottom: 7px;
+            margin-bottom: 8px;
         }
 
         .section-heading p {
             color: #666;
         }
-
 
         /* SKILLS */
 
@@ -220,11 +183,10 @@
             margin-right: 9px;
         }
 
-
         /* PROJECTS */
 
         #projects {
-            background-color: #f6f7f9;
+            background-color: #f7f8fa;
         }
 
         .projects-grid {
@@ -259,7 +221,7 @@
         .project-card h3 {
             font-size: 21px;
             line-height: 1.3;
-            margin-bottom: 6px;
+            margin-bottom: 7px;
         }
 
         .project-source {
@@ -285,7 +247,6 @@
             color: #444;
         }
 
-
         /* FOOTER */
 
         footer {
@@ -304,10 +265,13 @@
             font-size: 14px;
         }
 
-
         /* MOBILE */
 
         @media (max-width: 850px) {
+
+            .hero {
+                min-height: 65vh;
+            }
 
             .hero h1 {
                 font-size: 44px;
@@ -322,12 +286,12 @@
                 grid-template-columns: 1fr;
             }
 
-            nav ul {
-                gap: 15px;
+            nav {
+                justify-content: center;
             }
 
-            nav a {
-                font-size: 14px;
+            nav ul {
+                gap: 20px;
             }
 
             section {
@@ -336,300 +300,255 @@
         }
 
     </style>
-</head>
 
+</head>
 
 <body>
 
+    <!-- NAVIGATION -->
 
-<!-- NAVIGATION -->
-
-<nav>
-
-    <div class="logo">NK.</div>
-
-    <ul>
-        <li><a href="#statement">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-    </ul>
-
-</nav>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
 
 
+    <!-- PERSONAL STATEMENT -->
 
-<!-- ===================================
-     PERSONAL STATEMENT
-=================================== -->
+    <header class="hero" id="about">
 
-<header class="hero" id="statement">
+        <div class="hero-content">
 
-    <div class="hero-content">
+            <h1>Nysa Kohli</h1>
 
-        <p class="intro">HELLO, I'M</p>
-
-        <h1>Nysa Kohli</h1>
-
-        <h2>
-            Supply Chain Management + Business Analytics & Information Technology
-        </h2>
-
-
-        <div class="statement-box">
-
-            <p class="statement-label">
-                PERSONAL STATEMENT
-            </p>
+            <h2>
+                Supply Chain Management & Business Analytics and Information Technology
+            </h2>
 
             <p class="statement">
+                Rutgers Business School student pursuing Supply Chain Management and Business Analytics & Information Technology with interests in data analytics, supply chain operations, and technology-driven business solutions.
+            </p>
 
-                Supply Chain Management and Business Analytics & Information
-                Technology student at Rutgers Business School with an interest
-                in using data, technology, and analytical problem-solving to
-                improve supply chain operations and business decision-making.
+            <a href="#projects" class="hero-button">
+                View My Projects
+            </a>
 
+        </div>
+
+    </header>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="section-heading">
+
+            <h2>Skills</h2>
+
+            <p>
+                Technical and professional skills relevant to business,
+                analytics, and supply chain.
+            </p>
+
+        </div>
+
+        <div class="skills-grid">
+
+
+            <div class="skill-category">
+
+                <h3>Supply Chain & Operations</h3>
+
+                <ul>
+                    <li>Inventory Management</li>
+                    <li>Inventory Replenishment</li>
+                    <li>Procurement Fundamentals</li>
+                    <li>Operations Coordination</li>
+                    <li>Process Improvement</li>
+                    <li>Demand & Supply Concepts</li>
+                    <li>Order Accuracy</li>
+                </ul>
+
+            </div>
+
+
+            <div class="skill-category">
+
+                <h3>Data & Technology</h3>
+
+                <ul>
+                    <li>Microsoft Excel</li>
+                    <li>PivotTables</li>
+                    <li>VLOOKUP / XLOOKUP</li>
+                    <li>Python</li>
+                    <li>SQL</li>
+                    <li>Data Analysis</li>
+                    <li>Microsoft Office</li>
+                </ul>
+
+            </div>
+
+
+            <div class="skill-category">
+
+                <h3>Professional Skills</h3>
+
+                <ul>
+                    <li>Problem Solving</li>
+                    <li>Communication</li>
+                    <li>Teamwork</li>
+                    <li>Time Management</li>
+                    <li>Attention to Detail</li>
+                    <li>Organization</li>
+                    <li>Customer Service</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="section-heading">
+
+            <h2>Projects</h2>
+
+            <p>
+                Selected technical and academic work related to analytics,
+                technology, and supply chain management.
             </p>
 
         </div>
 
 
-        <a href="#projects" class="hero-button">
-            View My Projects
-        </a>
-
-    </div>
-
-</header>
+        <div class="projects-grid">
 
 
+            <!-- PROJECT 1 -->
 
-<!-- ===================================
-     SKILLS
-=================================== -->
+            <div class="project-card">
 
-<section id="skills">
+                <div class="project-number">
+                    PROJECT 01
+                </div>
 
-    <div class="section-heading">
+                <h3>
+                    Python & SQL Technical Projects
+                </h3>
 
-        <h2>Skills</h2>
+                <div class="project-source">
+                    Tinker Coder — Technology Internship
+                </div>
+
+                <p>
+                    Completed 20+ structured Python programming problems
+                    involving programming fundamentals, logical problem-solving,
+                    and debugging. Worked with SQL and database concepts to
+                    strengthen skills in data-driven business analysis.
+                </p>
+
+                <span class="tag">Python</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Debugging</span>
+                <span class="tag">Data Analysis</span>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>
+                    ARIMA Demand Forecasting Research
+                </h3>
+
+                <div class="project-source">
+                    Supply Chain Management Coursework
+                </div>
+
+                <p>
+                    Researched ARIMA as an advanced forecasting model and
+                    evaluated its advantages and limitations for demand
+                    forecasting. Explored how historical demand patterns
+                    and forecasting techniques can support inventory,
+                    planning, and supply chain decision-making.
+                </p>
+
+                <span class="tag">ARIMA</span>
+                <span class="tag">Demand Forecasting</span>
+                <span class="tag">Supply Chain</span>
+                <span class="tag">Analytics</span>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <h3>
+                    Instrument Sales Management Application
+                </h3>
+
+                <div class="project-source">
+                    Computer Applications for Business Project
+                </div>
+
+                <p>
+                    Developed an application for managing sales across
+                    instrument categories including flute, clarinet, guitar,
+                    piano, and saxophone. The program processed sales
+                    information and generated daily reports, providing
+                    experience with programming logic and business data
+                    organization.
+                </p>
+
+                <span class="tag">Programming</span>
+                <span class="tag">Business Applications</span>
+                <span class="tag">Data Management</span>
+                <span class="tag">Reporting</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>Nysa Kohli</h3>
 
         <p>
-            Technical and professional skills I bring to business and
-            supply chain environments.
+            Supply Chain Management & Business Analytics and Information Technology
         </p>
-
-    </div>
-
-
-    <div class="skills-grid">
-
-
-        <div class="skill-category">
-
-            <h3>Supply Chain & Operations</h3>
-
-            <ul>
-                <li>Inventory Management</li>
-                <li>Inventory Replenishment</li>
-                <li>Procurement Fundamentals</li>
-                <li>Operations Coordination</li>
-                <li>Process Improvement</li>
-                <li>Demand & Supply Concepts</li>
-                <li>Order Accuracy</li>
-            </ul>
-
-        </div>
-
-
-
-        <div class="skill-category">
-
-            <h3>Data & Technology</h3>
-
-            <ul>
-                <li>Microsoft Excel</li>
-                <li>PivotTables</li>
-                <li>VLOOKUP / XLOOKUP</li>
-                <li>Python</li>
-                <li>SQL</li>
-                <li>Data Analysis</li>
-                <li>Microsoft Office</li>
-            </ul>
-
-        </div>
-
-
-
-        <div class="skill-category">
-
-            <h3>Professional Skills</h3>
-
-            <ul>
-                <li>Problem Solving</li>
-                <li>Communication</li>
-                <li>Teamwork</li>
-                <li>Time Management</li>
-                <li>Attention to Detail</li>
-                <li>Organization</li>
-                <li>Customer Service</li>
-            </ul>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ===================================
-     PROJECTS
-=================================== -->
-
-<section id="projects">
-
-    <div class="section-heading">
-
-        <h2>Projects</h2>
 
         <p>
-            Selected technical and academic work related to analytics,
-            technology, and supply chain management.
+            Rutgers Business School | Class of 2028
         </p>
 
-    </div>
-
-
-    <div class="projects-grid">
-
-
-        <!-- PROJECT 1 -->
-
-        <div class="project-card">
-
-            <div class="project-number">
-                PROJECT 01
-            </div>
-
-            <h3>
-                Python & SQL Technical Projects
-            </h3>
-
-            <div class="project-source">
-                Tinker Coder — Technology Internship
-            </div>
-
-            <p>
-
-                Completed 20+ structured Python programming problems involving
-                programming fundamentals, logical problem-solving, and debugging.
-                Also worked with SQL and database concepts, developing technical
-                skills applicable to data-driven business analysis.
-
-            </p>
-
-            <span class="tag">Python</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Debugging</span>
-            <span class="tag">Data Analysis</span>
-
-        </div>
-
-
-
-        <!-- PROJECT 2 -->
-
-        <div class="project-card">
-
-            <div class="project-number">
-                PROJECT 02
-            </div>
-
-            <h3>
-                ARIMA Demand Forecasting Research
-            </h3>
-
-            <div class="project-source">
-                Supply Chain Management Coursework
-            </div>
-
-            <p>
-
-                Researched ARIMA as an advanced forecasting model and evaluated
-                its advantages and limitations for demand forecasting. Explored
-                how historical demand patterns and forecasting techniques can
-                support inventory planning and supply chain decision-making.
-
-            </p>
-
-            <span class="tag">ARIMA</span>
-            <span class="tag">Demand Forecasting</span>
-            <span class="tag">Supply Chain</span>
-            <span class="tag">Analytics</span>
-
-        </div>
-
-
-
-        <!-- PROJECT 3 -->
-
-        <div class="project-card">
-
-            <div class="project-number">
-                PROJECT 03
-            </div>
-
-            <h3>
-                Instrument Sales Management Application
-            </h3>
-
-            <div class="project-source">
-                Computer Applications for Business Project
-            </div>
-
-            <p>
-
-                Developed an application for managing sales across instrument
-                categories including flute, clarinet, guitar, piano, and
-                saxophone. The program processed sales information and generated
-                daily reports, providing experience with programming logic and
-                business data organization.
-
-            </p>
-
-            <span class="tag">Programming</span>
-            <span class="tag">Business Applications</span>
-            <span class="tag">Data Management</span>
-            <span class="tag">Reporting</span>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    <h3>Nysa Kohli</h3>
-
-    <p>
-        Supply Chain Management + Business Analytics & Information Technology
-    </p>
-
-    <p>
-        Rutgers Business School | Class of 2028
-    </p>
-
-</footer>
-
+    </footer>
 
 </body>
 
 </html>
-```
