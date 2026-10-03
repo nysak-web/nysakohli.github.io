@@ -1,0 +1,635 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nysa Kohli | Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f6f7f9;
+            color: #222;
+            line-height: 1.6;
+        }
+
+
+        /* NAVIGATION */
+
+        nav {
+            background-color: white;
+            padding: 20px 9%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #e3e3e3;
+        }
+
+        .logo {
+            color: #cc0033;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: #cc0033;
+        }
+
+
+        /* PERSONAL STATEMENT */
+
+        .hero {
+            min-height: 82vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 20px;
+
+            background: linear-gradient(
+                135deg,
+                #ffffff,
+                #f0f1f3
+            );
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .intro {
+            color: #cc0033;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 62px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            color: #555;
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 28px;
+        }
+
+        .statement-box {
+            max-width: 790px;
+            margin: auto;
+            background-color: white;
+            padding: 25px 30px;
+            border-radius: 10px;
+            border-left: 4px solid #cc0033;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+        }
+
+        .statement-label {
+            color: #cc0033;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        .statement {
+            color: #444;
+            font-size: 18px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 30px;
+            background-color: #cc0033;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.25s;
+        }
+
+        .hero-button:hover {
+            background-color: #a8002a;
+            transform: translateY(-2px);
+        }
+
+
+        /* GENERAL */
+
+        section {
+            padding: 85px 9%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            font-size: 36px;
+            margin-bottom: 7px;
+        }
+
+        .section-heading p {
+            color: #666;
+        }
+
+
+        /* SKILLS */
+
+        #skills {
+            background-color: white;
+        }
+
+        .skills-grid {
+            max-width: 1050px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .skill-category {
+            background-color: #f8f8f8;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #e3e3e3;
+            transition: 0.25s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+            border-color: #cc0033;
+        }
+
+        .skill-category h3 {
+            color: #cc0033;
+            font-size: 19px;
+            margin-bottom: 18px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            color: #555;
+            padding: 6px 0;
+        }
+
+        .skill-category li::before {
+            content: "✓";
+            color: #cc0033;
+            font-weight: bold;
+            margin-right: 9px;
+        }
+
+
+        /* PROJECTS */
+
+        #projects {
+            background-color: #f6f7f9;
+        }
+
+        .projects-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #e2e2e2;
+            transition: 0.25s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .project-number {
+            color: #cc0033;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        .project-card h3 {
+            font-size: 21px;
+            line-height: 1.3;
+            margin-bottom: 6px;
+        }
+
+        .project-source {
+            color: #cc0033;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #5b5b5b;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #eeeeee;
+            padding: 5px 9px;
+            margin: 3px 2px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #444;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: #1d1d1f;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer h3 {
+            margin-bottom: 5px;
+        }
+
+        footer p {
+            color: #bbb;
+            font-size: 14px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .hero h2 {
+                font-size: 18px;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            section {
+                padding: 65px 7%;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">NK.</div>
+
+    <ul>
+        <li><a href="#statement">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+    </ul>
+
+</nav>
+
+
+
+<!-- ===================================
+     PERSONAL STATEMENT
+=================================== -->
+
+<header class="hero" id="statement">
+
+    <div class="hero-content">
+
+        <p class="intro">HELLO, I'M</p>
+
+        <h1>Nysa Kohli</h1>
+
+        <h2>
+            Supply Chain Management + Business Analytics & Information Technology
+        </h2>
+
+
+        <div class="statement-box">
+
+            <p class="statement-label">
+                PERSONAL STATEMENT
+            </p>
+
+            <p class="statement">
+
+                Supply Chain Management and Business Analytics & Information
+                Technology student at Rutgers Business School with an interest
+                in using data, technology, and analytical problem-solving to
+                improve supply chain operations and business decision-making.
+
+            </p>
+
+        </div>
+
+
+        <a href="#projects" class="hero-button">
+            View My Projects
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- ===================================
+     SKILLS
+=================================== -->
+
+<section id="skills">
+
+    <div class="section-heading">
+
+        <h2>Skills</h2>
+
+        <p>
+            Technical and professional skills I bring to business and
+            supply chain environments.
+        </p>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+
+        <div class="skill-category">
+
+            <h3>Supply Chain & Operations</h3>
+
+            <ul>
+                <li>Inventory Management</li>
+                <li>Inventory Replenishment</li>
+                <li>Procurement Fundamentals</li>
+                <li>Operations Coordination</li>
+                <li>Process Improvement</li>
+                <li>Demand & Supply Concepts</li>
+                <li>Order Accuracy</li>
+            </ul>
+
+        </div>
+
+
+
+        <div class="skill-category">
+
+            <h3>Data & Technology</h3>
+
+            <ul>
+                <li>Microsoft Excel</li>
+                <li>PivotTables</li>
+                <li>VLOOKUP / XLOOKUP</li>
+                <li>Python</li>
+                <li>SQL</li>
+                <li>Data Analysis</li>
+                <li>Microsoft Office</li>
+            </ul>
+
+        </div>
+
+
+
+        <div class="skill-category">
+
+            <h3>Professional Skills</h3>
+
+            <ul>
+                <li>Problem Solving</li>
+                <li>Communication</li>
+                <li>Teamwork</li>
+                <li>Time Management</li>
+                <li>Attention to Detail</li>
+                <li>Organization</li>
+                <li>Customer Service</li>
+            </ul>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================
+     PROJECTS
+=================================== -->
+
+<section id="projects">
+
+    <div class="section-heading">
+
+        <h2>Projects</h2>
+
+        <p>
+            Selected technical and academic work related to analytics,
+            technology, and supply chain management.
+        </p>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="project-card">
+
+            <div class="project-number">
+                PROJECT 01
+            </div>
+
+            <h3>
+                Python & SQL Technical Projects
+            </h3>
+
+            <div class="project-source">
+                Tinker Coder — Technology Internship
+            </div>
+
+            <p>
+
+                Completed 20+ structured Python programming problems involving
+                programming fundamentals, logical problem-solving, and debugging.
+                Also worked with SQL and database concepts, developing technical
+                skills applicable to data-driven business analysis.
+
+            </p>
+
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Debugging</span>
+            <span class="tag">Data Analysis</span>
+
+        </div>
+
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="project-card">
+
+            <div class="project-number">
+                PROJECT 02
+            </div>
+
+            <h3>
+                ARIMA Demand Forecasting Research
+            </h3>
+
+            <div class="project-source">
+                Supply Chain Management Coursework
+            </div>
+
+            <p>
+
+                Researched ARIMA as an advanced forecasting model and evaluated
+                its advantages and limitations for demand forecasting. Explored
+                how historical demand patterns and forecasting techniques can
+                support inventory planning and supply chain decision-making.
+
+            </p>
+
+            <span class="tag">ARIMA</span>
+            <span class="tag">Demand Forecasting</span>
+            <span class="tag">Supply Chain</span>
+            <span class="tag">Analytics</span>
+
+        </div>
+
+
+
+        <!-- PROJECT 3 -->
+
+        <div class="project-card">
+
+            <div class="project-number">
+                PROJECT 03
+            </div>
+
+            <h3>
+                Instrument Sales Management Application
+            </h3>
+
+            <div class="project-source">
+                Computer Applications for Business Project
+            </div>
+
+            <p>
+
+                Developed an application for managing sales across instrument
+                categories including flute, clarinet, guitar, piano, and
+                saxophone. The program processed sales information and generated
+                daily reports, providing experience with programming logic and
+                business data organization.
+
+            </p>
+
+            <span class="tag">Programming</span>
+            <span class="tag">Business Applications</span>
+            <span class="tag">Data Management</span>
+            <span class="tag">Reporting</span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>Nysa Kohli</h3>
+
+    <p>
+        Supply Chain Management + Business Analytics & Information Technology
+    </p>
+
+    <p>
+        Rutgers Business School | Class of 2028
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
+```
